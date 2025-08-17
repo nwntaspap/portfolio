@@ -28,7 +28,37 @@
           <a href="index.html">Epameinondas Papamichail</a>
         </div>
 
+        <!-- Sidebar -->
+        <input type="checkbox" id="sidebar-active" />
+        <label for="sidebar-active" id="toggle-button">
+          <svg
+            fill="var(--text-color)"
+            xmlns="http://www.w3.org/2000/svg"
+            height="24"
+            viewBox="0 -960 960 960"
+            width="24"
+          >
+            <path
+              d="M160-240q-17 0-28.5-11.5T120-280q0-17 11.5-28.5T160-320h640q17 0 28.5 11.5T840-280q0 17-11.5 28.5T800-240H160Zm0-200q-17 0-28.5-11.5T120-480q0-17 11.5-28.5T160-520h640q17 0 28.5 11.5T840-480q0 17-11.5 28.5T800-440H160Zm0-200q-17 0-28.5-11.5T120-680q0-17 11.5-28.5T160-720h640q17 0 28.5 11.5T840-680q0 17-11.5 28.5T800-640H160Z"
+            ></path>
+          </svg>
+        </label>
+        <label for="sidebar-active" id="overlay"></label>
+
         <ul class="nav-links">
+          <label for="sidebar-active">
+            <svg
+              fill="var(--text-color)"
+              xmlns="http://www.w3.org/2000/svg"
+              height="30"
+              viewBox="0 -960 960 960"
+              width="30"
+            >
+              <path
+                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+              ></path>
+            </svg>
+          </label>
           <li>
             <a
               href="https://www.instagram.com/nwntas_papamichael/?next=%2F"
@@ -156,10 +186,14 @@
         <summary>How can I contact you?</summary>
         <p>
           The easiest way to reach me is through
-          <a href="mailto:nwntaspapmichael@gmail.com">email</a> or via
+          <a href="mailto:nwntaspapmichael@gmail.com" class="details-link"
+            >email</a
+          >
+          or via
           <a
             href="https://www.linkedin.com/in/epameinontas-papamichail/"
             target="_blank"
+            class="details-link"
             >LinkedIn</a
           >. I’m always happy to discuss new opportunities or collaborate on
           projects.

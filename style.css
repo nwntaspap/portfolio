@@ -270,11 +270,27 @@ header img {
   transform: translateY(-50%) rotate(90deg);
 }
 
+/* Smooth expand/collapse for FAQ */
+.question[open] p {
+  animation: fadeSlideDown 0.4s ease forwards;
+}
+
 .question p {
   padding: 1rem 0 0 0;
   text-align: left;
   line-height: 1.6;
   opacity: 0.9;
+}
+
+.question .details-link {
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--secondary-color);
+  transition: all 0.3s;
+}
+
+.question .details-link:hover {
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 @media (max-width: 800px) {
@@ -313,6 +329,18 @@ header img {
   }
 }
 
+@media (max-width: 500px) {
+  .header-link-box {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+  }
+  .header-link-box > a {
+    text-align: center;
+    width: 80%;
+  }
+}
+
 @keyframes Slide-In {
   0% {
     transform: translateX(-2.5rem);
@@ -324,5 +352,16 @@ header img {
   100% {
     transform: translateX(0);
     opacity: 1;
+  }
+}
+
+@keyframes fadeSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
