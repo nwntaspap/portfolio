@@ -43,6 +43,7 @@ h1 {
 
 h2 {
   font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 /* Navbar */
@@ -184,6 +185,32 @@ header img {
 .cta-button:hover.secondary-btn {
   transform: translateY(-3px);
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Assist Section */
+.services {
+  font-size: 1.05rem;
+  list-style: none;
+}
+
+.services li {
+  position: relative;
+  padding-left: 1.7rem;
+  margin-bottom: 0.5rem;
+}
+
+.services li:hover::before {
+  transform: translate(5px, -5px);
+}
+
+.services li::before {
+  content: "\27A2";
+  font-size: 1.5rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translatey(-5px);
+  transition: all 0.3s;
 }
 
 /* Project Section */
@@ -352,5 +379,16 @@ header img {
   100% {
     transform: translateX(0);
     opacity: 1;
+  }
+}
+
+@keyframes fadeSlideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-0.5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
