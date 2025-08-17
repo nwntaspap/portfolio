@@ -88,6 +88,35 @@ nav a:hover::before {
   width: 100%;
 }
 
+/* Sidebar Nav */
+nav #sidebar-active {
+  display: none;
+}
+
+nav #toggle-button {
+  display: none;
+}
+
+.nav-links label {
+  display: none;
+}
+
+#overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  /* still smaller than the sidebar */
+  z-index: 5;
+}
+
+#sidebar-active:checked ~ #overlay {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
 /* Main Styling */
 header,
 section {
@@ -246,6 +275,42 @@ header img {
   text-align: left;
   line-height: 1.6;
   opacity: 0.9;
+}
+
+@media (max-width: 800px) {
+  nav #toggle-button {
+    display: block;
+  }
+  nav #sidebar-active:checked ~ .nav-links {
+    right: 0;
+  }
+  nav #sidebar-active:checked ~ .nav-links label {
+    display: block;
+  }
+  .nav-links label {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    transform-origin: 50% 50%;
+    transition: all 0.3s;
+  }
+  .nav-links label:hover {
+    transform: rotate(90deg);
+  }
+  nav .nav-links {
+    position: relative;
+    background-color: var(--color-3);
+    padding: 2rem;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 260px;
+    /* When toggled hide it with right equal to the width */
+    right: -260px;
+    z-index: 10;
+    transition: all 0.3s;
+  }
 }
 
 @keyframes Slide-In {
