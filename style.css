@@ -225,7 +225,7 @@ header img {
 }
 
 .project-links {
-  width: min(600px, 100%);
+  width: min(500px, 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -358,6 +358,7 @@ header img {
 
 @media (max-width: 500px) {
   .header-link-box {
+    width: 100%;
     flex-direction: column;
     align-items: center;
     row-gap: 1rem;
@@ -365,6 +366,15 @@ header img {
   .header-link-box > a {
     text-align: center;
     width: 80%;
+  }
+  .btn-box .social-btn {
+    margin-top: 1rem;
+    text-align: center;
+    width: 80%;
+  }
+  .services-img,
+  .projects-img {
+    width: min(350px, 100%);
   }
 }
 
