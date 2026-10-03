@@ -2,7 +2,7 @@
   --base-color: #ffffff;
   --text-color: #000000;
   --primary-color: #ffc06e;
-  --secondary-color: #8d8dff;
+  --secondary-color: #5a51e8;
   --color-1: #f9f6f3;
   --color-2: #f3f7f9;
   --color-3: #f6f3f9;
@@ -33,16 +33,27 @@ h3 {
 }
 
 h1 {
-  animation: Slide-In 1s 0.5s ease;
-}
-
-h1 {
   font-size: 2.5rem;
+  animation: Slide-In 1s 0.5s ease;
 }
 
 h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
+}
+
+/* Accessibility Helpers */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* Navbar */
@@ -89,8 +100,11 @@ nav a:hover::before {
 }
 
 /* Sidebar Nav */
-nav #sidebar-active {
-  display: none;
+/* The checkbox stays focusable (via .visually-hidden) so the menu is keyboard operable */
+nav #sidebar-active:focus-visible~#toggle-button svg {
+  outline: 2px solid var(--secondary-color);
+  outline-offset: 4px;
+  border-radius: 4px;
 }
 
 nav #toggle-button {
@@ -165,7 +179,8 @@ header img {
 .cta-button {
   display: inline-block;
   text-decoration: none;
-  color: var(--base-color);
+  /* Dark text on the light peach keeps contrast at 10.3:1 (WCAG AA needs 4.5:1) */
+  color: #1f1f1f;
   background-color: var(--primary-color);
   padding: 0.75rem 1.25rem;
   border-radius: 0.5rem;
@@ -178,6 +193,7 @@ header img {
 }
 
 .cta-button.secondary-btn {
+  color: var(--base-color);
   background-color: var(--secondary-color);
 }
 
@@ -232,7 +248,7 @@ header img {
 }
 
 .project-link {
-  width: min(300px, 100%);
+  width: min(420px, 100%);
   display: flex;
   align-items: center;
   color: var(--text-color);
@@ -246,9 +262,28 @@ header img {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-.project-link span {
+.project-link img {
+  flex-shrink: 0;
+  /* the source logo is slightly taller than it is wide */
+  object-fit: contain;
+}
+
+.project-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.project-title {
   font-size: 1.1rem;
   font-weight: 600;
+}
+
+.project-desc {
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.45;
+  opacity: 0.75;
 }
 
 .btn-box {
@@ -279,6 +314,11 @@ header img {
   font-weight: 600;
   font-size: 1.1rem;
   cursor: pointer;
+}
+
+/* Safari / older Chrome still draw the default triangle without this */
+.question summary::-webkit-details-marker {
+  display: none;
 }
 
 .question summary::after {

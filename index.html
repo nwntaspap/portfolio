@@ -5,6 +5,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Epameinondas Papamichail</title>
+  <meta name="description"
+    content="Epameinondas Papamichail is a front-end developer building clean, responsive web apps with HTML, CSS, JavaScript, React, Next.js and TypeScript." />
+
+  <!-- Open Graph: makes shared links render a titled card instead of a blank one -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Epameinondas Papamichail" />
+  <meta property="og:description"
+    content="Front-end developer building clean, responsive web apps with HTML, CSS, JavaScript, React, Next.js and TypeScript." />
+
   <!-- Shorcut Icon -->
   <link rel="icon" type="image/x-icon" href="images/tags.png" />
   <!-- Google Fonts -->
@@ -29,30 +38,31 @@
       </div>
 
       <!-- Sidebar -->
-      <input type="checkbox" id="sidebar-active" />
-      <label for="sidebar-active" id="toggle-button">
-        <svg fill="var(--text-color)" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960"
-          width="24">
+      <input type="checkbox" id="sidebar-active" class="visually-hidden" aria-label="Toggle navigation menu" />
+      <label for="sidebar-active" id="toggle-button" aria-hidden="true">
+        <svg aria-hidden="true" focusable="false" fill="var(--text-color)" xmlns="http://www.w3.org/2000/svg" height="24"
+          viewBox="0 -960 960 960" width="24">
           <path
             d="M160-240q-17 0-28.5-11.5T120-280q0-17 11.5-28.5T160-320h640q17 0 28.5 11.5T840-280q0 17-11.5 28.5T800-240H160Zm0-200q-17 0-28.5-11.5T120-480q0-17 11.5-28.5T160-520h640q17 0 28.5 11.5T840-480q0 17-11.5 28.5T800-440H160Zm0-200q-17 0-28.5-11.5T120-680q0-17 11.5-28.5T160-720h640q17 0 28.5 11.5T840-680q0 17-11.5 28.5T800-640H160Z">
           </path>
         </svg>
       </label>
-      <label for="sidebar-active" id="overlay"></label>
+      <label for="sidebar-active" id="overlay" aria-hidden="true"></label>
 
       <ul class="nav-links">
-        <label for="sidebar-active">
-          <svg fill="var(--text-color)" xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960"
-            width="30">
+        <label for="sidebar-active" aria-hidden="true">
+          <svg aria-hidden="true" focusable="false" fill="var(--text-color)" xmlns="http://www.w3.org/2000/svg" height="30"
+            viewBox="0 -960 960 960" width="30">
             <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z">
             </path>
           </svg>
         </label>
         <li>
-          <a href="https://github.com/nwntaspap" target="_blank">GitHub</a>
+          <a href="https://github.com/nwntaspap" target="_blank" rel="noopener noreferrer">GitHub</a>
         </li>
         <li>
-          <a href="https://www.linkedin.com/in/epameinontas-papamichail/" target="_blank">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/epameinontas-papamichail/" target="_blank"
+            rel="noopener noreferrer">LinkedIn</a>
         </li>
         <li><a href="#my-work">My Work</a></li>
       </ul>
@@ -69,19 +79,18 @@
           collaboration.
         </p>
         <div class="header-link-box">
-          <div class="header-link-box">
-            <a href="mailto:nwntaspapmichael@gmail.com" class="cta-button social-btn">Contact Me</a>
-            <a href="#my-work" class="cta-button secondary-btn">See my work</a>
-          </div>
+          <a href="mailto:nwntaspapmichael@gmail.com" class="cta-button social-btn">Contact Me</a>
+          <a href="#my-work" class="cta-button secondary-btn">See my work</a>
         </div>
       </div>
     </div>
   </header>
 
-  <section>
-    <div class="flex-container">
+  <main>
+    <section>
+      <div class="flex-container">
       <div class="text-container">
-        <h2>How can i assist you</h2>
+        <h2>How can I assist you</h2>
         <p>I offer front-end development services including:</p>
 
         <ul class="services">
@@ -92,72 +101,104 @@
           <li>Collaborate on web apps and digital products</li>
         </ul>
       </div>
-      <img src="images/web-development.svg" width="350px" class="services-img" alt="Web-Development Image" />
-    </div>
-  </section>
-
-  <section id="my-work">
-    <h2>Some of my projects</h2>
-    <div class="project-link-container">
-      <img src="images/projects.svg" width="350px" class="projects-img" alt="About Projects Image" />
-      <div class="project-links">
-        <a href="https://github.com/nwntaspap/forum" class="project-link" target="_blank">
-          <img width="35px" height="35px" src="images/github-logo.png" alt="Github Logo Image" />
-          <span>Forum</span>
-        </a>
-        <a href="https://github.com/nwntaspap/groupie-tracker" class="project-link" target="_blank">
-          <img width="35px" height="35px" src="images/github-logo.png" alt="Github Logo Image" />
-          <span>Groupie Tracker</span>
-        </a>
-        <a href="https://github.com/nwntaspap/Ascii-Art-Web" class="project-link" target="_blank">
-          <img width="35px" height="35px" src="images/github-logo.png" alt="Github Logo Image" />
-          <span>ASCII Art Web Generator</span>
-        </a>
-
-        <a href="https://github.com/nwntaspap/net-cat" class="project-link" target="_blank">
-          <img width="35px" height="35px" src="images/github-logo.png" alt="Github Logo Image" />
-          <span>Net Cat Project</span>
-        </a>
+      <img src="images/web-development.svg" width="350px" class="services-img" alt="" />
       </div>
-    </div>
-    <div class="btn-box">
-      <a href="https://github.com/nwntaspap?tab=repositories" class="cta-button social-btn" target="_blank">More on
-        Github</a>
-    </div>
-  </section>
+    </section>
+
+    <section id="my-work">
+      <h2>Some of my projects</h2>
+      <div class="project-link-container">
+        <img src="images/projects.svg" width="350px" class="projects-img" alt="" />
+        <div class="project-links">
+          <a href="https://github.com/nwntaspap/Social-Network" class="project-link" target="_blank"
+            rel="noopener noreferrer">
+            <img width="35px" height="35px" src="images/github-logo.png" alt="" />
+            <span class="project-text">
+              <span class="project-title">Social Network</span>
+              <span class="project-desc">Real-time chat with WebSockets, typing indicators and read receipts, built
+                with Next.js, React and TypeScript on a Go backend.</span>
+            </span>
+          </a>
+          <a href="https://github.com/nwntaspap/Real-Time-Forum" class="project-link" target="_blank"
+            rel="noopener noreferrer">
+            <img width="35px" height="35px" src="images/github-logo.png" alt="" />
+            <span class="project-text">
+              <span class="project-title">Real-Time Forum</span>
+              <span class="project-desc">A full-stack forum application with real-time messaging powered by
+                WebSockets.</span>
+            </span>
+          </a>
+          <a href="https://github.com/nwntaspap/Mini-Framework" class="project-link" target="_blank"
+            rel="noopener noreferrer">
+            <img width="35px" height="35px" src="images/github-logo.png" alt="" />
+            <span class="project-text">
+              <span class="project-title">Mini Framework</span>
+              <span class="project-desc">A small JavaScript framework built entirely from scratch with vanilla
+                JS.</span>
+            </span>
+          </a>
+          <a href="https://github.com/nwntaspap/ClonerNews" class="project-link" target="_blank"
+            rel="noopener noreferrer">
+            <img width="35px" height="35px" src="images/github-logo.png" alt="" />
+            <span class="project-text">
+              <span class="project-title">ClonerNews</span>
+              <span class="project-desc">A Hacker News reader with stories, jobs and polls, live updates,
+                infinite scroll and comments.</span>
+            </span>
+          </a>
+          <a href="https://github.com/nwntaspap/Make-Your-Game" class="project-link" target="_blank"
+            rel="noopener noreferrer">
+            <img width="35px" height="35px" src="images/github-logo.png" alt="" />
+            <span class="project-text">
+              <span class="project-title">Make Your Game</span>
+              <span class="project-desc">A classic brick-breaker (Arkanoid) built with vanilla HTML, CSS and
+                JavaScript.</span>
+            </span>
+          </a>
+        </div>
+      </div>
+      <div class="btn-box">
+        <a href="https://github.com/nwntaspap?tab=repositories" class="cta-button social-btn" target="_blank"
+          rel="noopener noreferrer">More on Github</a>
+      </div>
+    </section>
 
   <section class="questions">
-    <h2>Common Questions</h2>
-    <details class="question">
-      <summary>How can I contact you?</summary>
-      <p>
-        The easiest way to reach me is through
-        <a href="mailto:nwntaspapmichael@gmail.com" class="details-link">email</a>
-        or via
-        <a href="https://www.linkedin.com/in/epameinontas-papamichail/" target="_blank"
-          class="details-link">LinkedIn</a>. I’m always happy to discuss new opportunities or collaborate on
-        projects.
-      </p>
-    </details>
-    <details class="question">
-      <summary>What technologies do you work with?</summary>
-      <p>
-        I mostly work with
-        <strong>HTML, CSS, and JavaScript</strong> and am also having a good
-        understanding with fundamentals in <strong>React</strong>. I'm also
-        comfortable with Git/GitHub for version control, and I'm constantly
-        exploring new tools to improve my workflow.
-      </p>
-    </details>
-    <details class="question">
-      <summary>Are you open for collaboration?</summary>
-      <p>
-        Absolutely! I enjoy working on team projects. If you have an idea, a
-        startup project, or need a helping hand on your development team, feel
-        free to get in touch.
-      </p>
-    </details>
-  </section>
+      <h2>Common Questions</h2>
+      <details class="question">
+        <summary>How can I contact you?</summary>
+        <p>
+          The easiest way to reach me is through
+          <a href="mailto:nwntaspapmichael@gmail.com" class="details-link">email</a>
+          or via
+          <a href="https://www.linkedin.com/in/epameinontas-papamichail/" target="_blank" rel="noopener noreferrer"
+            class="details-link">LinkedIn</a>. I’m always happy to discuss new opportunities or collaborate on
+          projects.
+        </p>
+      </details>
+      <details class="question">
+        <summary>What technologies do you work with?</summary>
+        <p>
+          My everyday stack is <strong>HTML, CSS and JavaScript</strong>, and I
+          build full-stack web apps with <strong>React</strong>,
+          <strong>Next.js</strong> and <strong>TypeScript</strong> — my
+          <a href="https://github.com/nwntaspap/Social-Network" target="_blank" rel="noopener noreferrer"
+            class="details-link">Social Network</a>
+          project is built with exactly that stack. I'm also comfortable with
+          <strong>Git/GitHub</strong> for version control, and I'm constantly
+          exploring new tools to improve my workflow.
+        </p>
+      </details>
+      <details class="question">
+        <summary>Are you open for collaboration?</summary>
+        <p>
+          Absolutely! I enjoy working on team projects. If you have an idea, a
+          startup project, or need a helping hand on your development team, feel
+          free to get in touch.
+        </p>
+      </details>
+    </section>
+  </main>
 </body>
 
 </html>
