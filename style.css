@@ -3,9 +3,17 @@
   --text-color: #000000;
   --primary-color: #ffc06e;
   --secondary-color: #5a51e8;
-  --color-1: #f9f6f3;
-  --color-2: #f3f7f9;
-  --color-3: #f6f3f9;
+
+  /* Surfaces: one clear step per band, instead of three near-identical off-whites */
+  --surface-hero: #fdf1e3;
+  /* warm peach wash — ties the hero to the brand */
+  --surface-plain: #f4f6f9;
+  /* cool neutral — the default section band */
+  --surface-feature: #f0eefd;
+  /* lavender wash — the projects band, the focal point */
+  --surface-card: #ffffff;
+  /* panels sitting on top of a band */
+  --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 /* Basic Styling */
@@ -101,7 +109,7 @@ nav a:hover::before {
 
 /* Sidebar Nav */
 /* The checkbox stays focusable (via .visually-hidden) so the menu is keyboard operable */
-nav #sidebar-active:focus-visible~#toggle-button svg {
+nav #sidebar-active:focus-visible ~ #toggle-button svg {
   outline: 2px solid var(--secondary-color);
   outline-offset: 4px;
   border-radius: 4px;
@@ -136,14 +144,24 @@ header,
 section {
   margin: 2rem auto;
   width: min(75rem, 100%); /* 75rem = 1200px */
-  background-color: var(--color-1);
   padding: min(2rem, 15%);
   border-radius: 1rem;
+  /* lifts each band off the white page so the rounded shape reads */
+  box-shadow: var(--card-shadow);
+}
+
+header {
+  background-color: var(--surface-hero);
 }
 
 section {
   padding: 3rem min(2rem, 15%);
-  background-color: var(--color-2);
+  background-color: var(--surface-plain);
+}
+
+/* the projects band is the focal point of the page */
+section#my-work {
+  background-color: var(--surface-feature);
 }
 
 .flex-container {
@@ -230,12 +248,13 @@ header img {
 
 /* Project Section */
 .project-link-container {
-  background-color: var(--color-3);
+  background-color: var(--surface-card);
+  border-radius: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 3rem;
-  padding: 1rem;
+  padding: 1.5rem 1rem;
   flex-wrap: wrap;
 }
 
@@ -298,14 +317,16 @@ header img {
 
 .question {
   margin-bottom: 1rem;
-  background-color: var(--color-3);
+  background-color: var(--surface-card);
+  border: 1px solid rgba(90, 81, 232, 0.1);
   border-radius: 0.5rem;
   padding: 1rem;
   transition: all 0.3s ease;
 }
 
 .question:hover {
-  background-color: rgba(141, 141, 255, 0.1);
+  border-color: rgba(90, 81, 232, 0.3);
+  background-color: rgba(90, 81, 232, 0.04);
 }
 
 .question summary {
@@ -381,7 +402,7 @@ header img {
   }
   nav .nav-links {
     position: relative;
-    background-color: var(--color-3);
+    background-color: var(--surface-card);
     padding: 2rem;
     flex-direction: column;
     position: fixed;
